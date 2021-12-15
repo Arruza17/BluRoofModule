@@ -2,8 +2,4 @@
 
 
 from . import models
-from . import Guest
-from . import LastSignIn
-from . import Owner
-from . import User
-from . import facility, neighbourhood, service
+from . import facility, neighbourhood, service, guest, lastsignin, owner, user, comment, dwelling, flat, flatfacility, room
