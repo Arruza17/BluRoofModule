@@ -9,8 +9,3 @@ class bluroof(models.Model):
         naturalLight = fields.Boolean()
         nOutlets = fields.Integer()
         description = fields.Text()
-        
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         self.value2 = float(self.value) / 100
