@@ -1,3 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from . import models, facility, neighbourhood, service
+
+from . import models
+from . import Guest
+from . import LastSignIn
+from . import Owner
+from . import User
+from . import facility, neighbourhood, service
