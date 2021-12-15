@@ -15,7 +15,7 @@ class Dwelling(models.Model):
         host_id = fields.Many2one('bluroof.owner',
         ondelete = 'cascade', String = "Host", index = True)
         rating = fields.Float()
-        comments = fields.One2many('bluroof.comment','comments',
+        comments = fields.One2many('bluroof.comment','dwelling_id',
         ondelete = 'cascade', String = "Comments", index = True)
         
 #
