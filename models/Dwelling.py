@@ -1,22 +1,23 @@
 # -*- coding: utf-8 -*-
 #enum = selection
 #first commit
-from odoo import models, fields, api
+from odoo import api
+from odoo import fields
+from odoo import models
 
 class Dwelling(models.Model):
-        _name = 'bluroof.dwelling'
-
-        address = fields.String()
-        hasWiFi = fields.Boolean()
-        squareMeters = fields.Double()
-        neighbourhood_id = fields.Many2one('bluroof.neighbourhood',
-        ondelete = 'cascade', String = "Neighbourhood", index = True)
-        constructionDate = fields.Date()
-        host_id = fields.Many2one('bluroof.owner',
-        ondelete = 'cascade', String = "Host", index = True)
-        rating = fields.Float()
-        comments = fields.One2many('bluroof.comment','dwelling_id',
-        ondelete = 'cascade', String = "Comments", index = True)
+    _name = 'bluroof.dwelling'
+    address = fields.Char(String="Address")
+    hasWiFi = fields.Boolean()
+    squareMeters = fields.Float()
+    neighbourhood_id = fields.Many2one('bluroof.neighbourhood',
+                                       ondelete='cascade', String="Neighbourhood", index=True)
+    constructionDate = fields.Date()
+    host_id = fields.Many2one('bluroof.owner',
+                              ondelete='cascade', String="Host", index=True)
+    rating = fields.Float()
+    comments = fields.One2many('bluroof.comment', 'dwelling_id ',
+                               ondelete='cascade', String="Comments", index=True)
         
 #
 #     @api.depends('value')

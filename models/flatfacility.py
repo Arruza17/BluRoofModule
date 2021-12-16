@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 #enum = selection
 #first commit
-from odoo import models, fields, api
+from odoo import api
+from odoo import fields
+from odoo import models
 
 class bluroof(models.Model):
-        _name = 'bluroof.flatfacility'
-        flat_id=fields.Many2One('bluroof.flat',ondelete='cascade',string="Flat",required=true)
-        facility_id= fields.Many2One('bluroof.facility',ondelete='cascade',string="Facility",required=true)
-        facility_condition=fields.Selection()
-        description = fields.Text()
+    _name = 'bluroof.flatfacility'
+    flat_id = fields.Many2one('bluroof.flat', ondelete='cascade', String="Flat")
+    facility_id = fields.Many2one('bluroof.facility', ondelete='cascade', String="Facility")
+    facility_condition = fields.Selection(["NEW", "BROKEN", "WORKING"], String="Facility condition")
+    description = fields.Text()
         

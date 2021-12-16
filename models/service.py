@@ -1,15 +1,17 @@
 # -*- coding: utf-8 -*-
 #enum = selection
 #first commit
-from odoo import models, fields, api
+from odoo import api
+from odoo import fields
+from odoo import models
 
 class service(models.Model):
-        _name = 'bluroof.service'
+    _name = 'bluroof.service'
 
-        type = fields.Selection()
-        address = fields.Char()
-        name = fields.Char()
-        neighbourhood_id = fields.Many2one('bluroof.neighbourhood',ondelete='cascade', string="Neighbourhood")
+    serviceType = fields.Selection(["HEALTH", "RESTORATION", "TRANSPORT", "EDUCATION", "TRAVELLING", "SHOPPING"], String="Service type")
+    address = fields.Char()
+    name = fields.Char()
+    neighbourhood_id = fields.Many2one('bluroof.neighbourhood', ondelete='cascade', string="Neighbourhood")
         
 #
 #     @api.depends('value')

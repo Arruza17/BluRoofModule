@@ -9,4 +9,4 @@ class Flat(models.Model):
         nRooms = fields.Integer()
         nBathrooms = fields.Integer()
         description = fields.Text()
-        flatfacility_id=fields.One2Many('bluroof.flatfacility','flat_id',string="Flat facilities",required=true)
+        flatFacilities =fields.One2many('bluroof.flatfacility','flat_id',string="Flat facilities")
