@@ -3,7 +3,7 @@
 #first commit
 from odoo import models, fields, api
 
-class Flat(models.Model):
+class flat(models.Model):
         _name = 'bluroof.flat'
         _inherit= 'bluroof.dwelling'
         nRooms = fields.Integer()

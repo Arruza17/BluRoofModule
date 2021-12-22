@@ -1,4 +1,14 @@
 # -*- coding: utf-8 -*-
 
 
-from . import models, facility, neighbourhood, service, guest, lastsignin, owner, user, comment, dwelling, flat, flatfacility, room
+import comment
+import dwelling
+import facility
+import flat
+import flatfacility
+import guest
+import neighbourhood
+import owner
+import room
+import service
+import user

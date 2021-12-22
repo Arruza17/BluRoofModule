@@ -5,7 +5,7 @@ from odoo import api
 from odoo import fields
 from odoo import models
 
-class bluroof(models.Model):
+class flatfacility(models.Model):
     _name = 'bluroof.flatfacility'
     flat_id = fields.Many2one('bluroof.flat', ondelete='cascade', String="Flat")
     facility_id = fields.Many2one('bluroof.facility', ondelete='cascade', String="Facility")
