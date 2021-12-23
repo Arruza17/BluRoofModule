@@ -7,8 +7,14 @@ from odoo import models
 
 class flatfacility(models.Model):
     _name = 'bluroof.flatfacility'
-    flat_id = fields.Many2one('bluroof.flat', ondelete='cascade', String="Flat")
-    facility_id = fields.Many2one('bluroof.facility', ondelete='cascade', String="Facility")
-    facility_condition = fields.Selection(["NEW", "BROKEN", "WORKING"], String="Facility condition")
-    description = fields.Text()
+    #flat_id = fields.Many2one('bluroof.flat', ondelete='cascade', String="Flat")
+    #facility_id = fields.Many2one('bluroof.facility', ondelete='cascade', String="Facility")
+    facility_condition = fields.Selection(CONDITION, String="Facility condition")
+    description = fields.Char()
+    
+    CONDITION = [
+    ('0', 'NEW'),
+    ('1', 'BROKEN'),
+    ('2', 'WORKING'),
+    ]
         

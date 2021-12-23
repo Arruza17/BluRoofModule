@@ -13,7 +13,3 @@ class neighbourhood(models.Model):
     services = fields.One2many('bluroof.service', 'neighbourhood_id', ondelete='cascade', string="Services")
         
         
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         self.value2 = float(self.value) / 100

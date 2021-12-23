@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 
 
-import comment
+#import comment
 import dwelling
 import facility
-import flat
-import flatfacility
-import guest
+#import flat
+#import flatfacility
+#import guest
 import neighbourhood
-import owner
+#import owner
 import room
 import service
-import user
+#import user
