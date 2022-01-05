@@ -8,7 +8,16 @@ from odoo import models
 class service(models.Model):
     _name = 'bluroof.service'
 
-    serviceType = fields.Selection(["HEALTH", "RESTORATION", "TRANSPORT", "EDUCATION", "TRAVELLING", "SHOPPING"], String="Service type")
+    SERVICES = [
+        ('0', 'HEALTH'),
+        ('1', 'RESTORATION'),
+        ('2', 'TRANSPORT'),
+        ('3', 'EDUCATION'),
+        ('4', 'TRAVELLING'),
+        ('5', 'SHOPPING')    
+        ]
+
+    serviceType = fields.Selection(SERVICES, String="Service type")
     address = fields.Char()
     name = fields.Char()
     neighbourhood_id = fields.Many2one('bluroof.neighbourhood', ondelete='cascade', string="Neighbourhood")

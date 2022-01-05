@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-#enum = selection
-#first commit
-from odoo import models, fields, api
+from odoo import api
+from odoo import fields
+from odoo import models
 
 class flat(models.Model):
         _name = 'bluroof.flat'
         _inherit= 'bluroof.dwelling'
+
         nRooms = fields.Integer()
         nBathrooms = fields.Integer()
         description = fields.Text()

@@ -13,7 +13,3 @@ class comment(models.Model):
     commenter_id = fields.Many2one('bluroof.guest', ondelete='cascade', String="Commenter")
     dwelling_id = fields.Many2one('bluroof.dwelling', ondelete='cascade', String="Dwelling")
         
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         self.value2 = float(self.value) / 100
