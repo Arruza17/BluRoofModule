@@ -27,13 +27,13 @@
             <field name="view_mode">tree,form</field>
         </record>
         
-        <record model="ir.ui.view" id="guest_view">
+        <!--record model="ir.ui.view" id="guest_view">
             <field name="name">view.guest</field>
             <field name="model">bluroof.user</field>
             <field name="priority" eval="16"/>
-            <field name="arch" type="xml"><!--  view  content:  <form>,  <tree>, <graph>, ... --></field>
+            <field name="arch" type="xml"></field>
             <field name="inherit_id" ref="id_category_list"/>
-        </record>
+        </record-->
 
         
         <!--record model="ir.actions.act_window" id="bluroof.show_rooms">
