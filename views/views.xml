@@ -26,6 +26,11 @@
             <field name="res_model">bluroof.owner</field>
             <field name="view_mode">tree,form</field>
         </record>
+        <record model="ir.actions.act_window" id="bluroof_show_dwelling">
+            <field name="name">Show dwellings</field>
+            <field name="res_model">bluroof.dwelling</field>
+            <field name="view_mode">tree,form</field>
+        </record>
         
         <!--record model="ir.ui.view" id="guest_view">
             <field name="name">view.guest</field>
@@ -66,9 +71,11 @@
         <!-- menu categories -->
         <menuitem name="Application" id="bluroof_menu_1" parent="bluroof_menu_root"/>
         <menuitem name="Users" id="bluroof_user_list" parent="bluroof_menu_1"/>
+        <menuitem name="Dwellings" id="bluroof_dwelling_list" parent="bluroof_menu_1" action="bluroof_show_dwelling"/>
         <!-- actions -->
         <menuitem name="Guest" id="bluroof_owner_list" parent="bluroof_user_list" action="bluroof_show_guests"/>
         <menuitem name="Owner" id="bluroof_guest_list" parent="bluroof_user_list" action="bluroof_show_owners"/>
+
 
         <!--menuitem name="Dwellings" id="bluroof.dwelling_list" parent="bluroof.menu_1"/>
         <menuitem name="Rooms" id="bluroof.room_list" parent="bluroof.dwelling_list" action="bluroof.show_rooms"/>

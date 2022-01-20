@@ -1,6 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="windows-1252"?>
+
 <odoo>
-   <menuitem id="bluroof_app"
-            name="Bluroof"
-            sequence="0"/>
+    <data>
+        <record model="ir.ui.view" id="dwelling_form_view">
+            <field name="name">bluroof.form</field>
+            <field name="model">bluroof.dwelling</field>
+            <field name="arch" type="xml">
+                <form String="Dwelling Form">
+                    <group>
+                        <group>
+                            <field name="address" String="Address"/>
+                            <field name="hasWiFi" String="Has WiFi"/>
+                            <field name="squareMeters" String="m²"/>
+                        </group>
+                        <group>
+                            <field name="constructionDate" String="Construction date"/>
+                            <field name="rating" String="Rating"/>
+                        </group>
+                    </group>
+                </form>          
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="dwelling_list_view">
+            <field name="address">dwelling.address</field>
+            <field name="model">bluroof.dwelling</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="address"/>
+                    <field name="hasWiFi"/>
+                    <field name="squareMeters"/>
+                </tree> 
+            </field>
+        </record>
+
+    </data>
 </odoo>
