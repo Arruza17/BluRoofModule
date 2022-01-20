@@ -1,88 +1,79 @@
+<?xml version="1.0" encoding="windows-1252"?>
+
 <odoo>
     <data>
-        <!-- explicit list view definition -->
-        <!--
-        <record model="ir.ui.view" id="bluroof.list">
-          <field name="name">bluroof list</field>
-          <field name="model">bluroof.bluroof</field>
-          <field name="arch" type="xml">
-            <tree>
-              <field name="name"/>
-              <field name="value"/>
-              <field name="value2"/>
-            </tree>
-          </field>
-        </record>
-        -->
-        <!-- actions opening views on models -->
-        <record model="ir.actions.act_window" id="bluroof_show_guests">
-            <field name="name">Show guests</field>
-            <field name="res_model">bluroof.guest</field>
-            <field name="view_mode">tree,form</field>
+        <record model="ir.ui.view" id="neighbourhood_form_view">
+            <field name="name">bluroof.form</field>
+            <field name="model">bluroof.neighbourhood</field>
+            <field name="arch" type="xml">
+                <form String="Event Form">
+                    <group>
+                        <group>
+                            <field name="title"/>
+                            <field name="description"/>
+                            <field name="event_category"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="minParticipants" string="Min. Participants"/>
+                                <field name="maxParticipants" string="Max. Participants"/>
+                                <field name="actualParticipants" string="Actual Participants"/>
+                            </group>
+                            <group>
+                                <field name="price"/>                               
+                                <field name="date"/>
+                                <field name="isRevised"/>
+                            </group>
+                        </group>
+                        <group>
+                        <field name="organizer"/>
+                        <field name="place"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Personal">
+                        <field name="personal">
+                            <tree>
+                                <field name="personalResource_type" string="Personal"/>
+                                <field name="quantity"/>
+                                <field name="price"/>
+                            </tree>
+                        </field>
+                        </page>
+                        <page string="Comments">
+                        <field name="comment"/>
+                        </page>
+                        <page string="Revisions">
+                        <field name="eventRevisions" string="Event Revisions"/>
+                        </page>
+                    </notebook>
+                </form>          
+            </field>
         </record>
         
-        <record model="ir.actions.act_window" id="bluroof_show_owners">
-            <field name="name">Show owners</field>
-            <field name="res_model">bluroof.owner</field>
-            <field name="view_mode">tree,form</field>
+        <record model="ir.ui.view" id="event_list_view">
+            <field name="name">event.list</field>
+            <field name="model">kedamos.event</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="title"/>
+                    <field name="event_category"/>
+                    <field name="actualParticipants"/>
+                    <field name="maxParticipants"/>
+                    <field name="price"/>
+                </tree> 
+            </field>
         </record>
         
-        <!--record model="ir.ui.view" id="guest_view">
-            <field name="name">view.guest</field>
-            <field name="model">bluroof.user</field>
-            <field name="priority" eval="16"/>
-            <field name="arch" type="xml"></field>
-            <field name="inherit_id" ref="id_category_list"/>
-        </record-->
-
-        
-        <!--record model="ir.actions.act_window" id="bluroof.show_rooms">
-            <field name="name">Show rooms</field>
-            <field name="res_model">bluroof.room</field>
-            <field name="view_mode">tree,form</field>
+                <record model="ir.ui.view" id="event_search_view">
+            <field name="name">event.search</field>
+            <field name="model">kedamos.event</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="title"/>
+                    <field name="event_category"/>
+                </search> 
+            </field>
         </record>
-        
-        <record model="ir.actions.act_window" id="bluroof.show_flats">
-            <field name="name">Show flats</field>
-            <field name="res_model">bluroof.flat</field>
-            <field name="view_mode">tree,form</field>
-        </record-->
-        <!-- server action to the one above -->
-        <!--
-        <record model="ir.actions.server" id="bluroof.action_server">
-          <field name="name">bluroof server</field>
-          <field name="model_id" ref="model_bluroof_bluroof"/>
-          <field name="code">
-            action = {
-              "type": "ir.actions.act_window",
-              "view_mode": "tree,form",
-              "res_model": self._name,
-            }
-          </field>
-        </record>
-        -->
-        <!-- Top menu item -->
-        <menuitem name="BluRoof" id="bluroof_menu_root"/>
-        <!-- menu categories -->
-        <menuitem name="Application" id="bluroof_menu_1" parent="bluroof_menu_root"/>
-        <menuitem name="Users" id="bluroof_user_list" parent="bluroof_menu_1"/>
-        <!-- actions -->
-        <menuitem name="Guest" id="bluroof_owner_list" parent="bluroof_user_list" action="bluroof_show_guests"/>
-        <menuitem name="Owner" id="bluroof_guest_list" parent="bluroof_user_list" action="bluroof_show_owners"/>
-
-        <!--menuitem name="Dwellings" id="bluroof.dwelling_list" parent="bluroof.menu_1"/>
-        <menuitem name="Rooms" id="bluroof.room_list" parent="bluroof.dwelling_list" action="bluroof.show_rooms"/>
-        <menuitem name="Flats" id="bluroof.flat_list" parent="bluroof.dwelling_list" action="bluroof.show_flats"/>
-
-        <menuitem name="Facilities" id="bluroof.menu_6_list" parent="bluroof.menu_1"/>
-        <menuitem name="Neighbourhood" id="bluroof.menu_7_list" parent="bluroof.menu_1"/>
-        -->
-        <!--<menuitem name="List" id="bluroof.menu_1_list" parent="bluroof.menu_1"
-                  action="bluroof.action_window"/>
-        -->
-        <!--
-        <menuitem name="Server to list" id="bluroof" parent="bluroof.menu_2"
-                  action="bluroof.action_server"/>
-        -->
     </data>
 </odoo>
