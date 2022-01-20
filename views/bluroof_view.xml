@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-   <menuitem id="bluroof_app"
-            name="Bluroof"
-            sequence="0"/>
-</odoo>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="user_form_view">
+            <field name="name">bluroof.user_form</field>
+            <field name="model">bluroof.user</field>
+            <field name="arch" type="xml">
+                <form String="User Form">
+                    <group>
+                        <group>
+                            <field name="name" String="Full Name"/>
+                            <field name="email" String="Email"/>
+                            <field name="login" String="Username"/>
+                        </group>
+                        <group>
+                            <field name="status" String="Status"/>
+                            <field name="privilege" String="Privilege"/>
+                            <field name="phoneNumber" String="Phone no."/>
+                        </group>                  
+                    </group>
+                </form>          
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="guest_form_view">                
+            <field name="inherit_id" ref="user_form_view"/>
+            <field name="name">bluroof.user_form</field>
+            <field name="model">bluroof.user</field>
+            <field name="arch" type="xml">
+                <form String="User Form">
+                    <group>
+                            
+                    </group>
+                </form>          
+            </field>
+        </record>
+        
+        
+        
+        <record model="ir.ui.view" id="user_list_view">
+            <field name="name">bluroof.user_view</field>
+            <field name="model">bluroof.user</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="login"/>
+                    <field name="email"/>
+                    <field name="name"/>
+                </tree> 
+            </field>
+        </record>
+
+    </data>
+</odoo>
