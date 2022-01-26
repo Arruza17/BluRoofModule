@@ -24,9 +24,11 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
+        'views/service_view.xml',
+        'views/neighborhood_view.xml',
         'views/views.xml',
-        'views/templates.xml', 
-        'views/neighborhoodView.xml'
+        'views/templates.xml'
+        
  	
    ],
    
