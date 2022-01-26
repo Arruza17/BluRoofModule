@@ -1,53 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <record model="ir.ui.view" id="user_form_view">
-            <field name="name">bluroof.user_form</field>
-            <field name="model">bluroof.user</field>
-            <field name="arch" type="xml">
-                <form String="User Form">
-                    <group>
-                        <group>
-                            <field name="name" String="Full Name"/>
-                            <field name="email" String="Email"/>
-                            <field name="login" String="Username"/>
-                        </group>
-                        <group>
-                            <field name="status" String="Status"/>
-                            <field name="privilege" String="Privilege"/>
-                            <field name="phoneNumber" String="Phone no."/>
-                        </group>                  
-                    </group>
-                </form>          
-            </field>
-        </record>
-        
-        <record model="ir.ui.view" id="guest_form_view">                
-            <field name="inherit_id" ref="user_form_view"/>
-            <field name="name">bluroof.user_form</field>
-            <field name="model">bluroof.user</field>
-            <field name="arch" type="xml">
-                <form String="User Form">
-                    <group>
-                            
-                    </group>
-                </form>          
-            </field>
-        </record>
-        
-        
-        
-        <record model="ir.ui.view" id="user_list_view">
-            <field name="name">bluroof.user_view</field>
+             
+        <record model="ir.ui.view" id="user_list">
+            <field name="name">user_list</field>
             <field name="model">bluroof.user</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="login"/>
                     <field name="email"/>
-                    <field name="name"/>
-                </tree> 
+                </tree>
             </field>
         </record>
+
+        <record model="ir.ui.view" id="guest_list">
+            <field name="inherit_id" ref="user_list"/>
+            <field name="name">guest_list</field>
+            <field name="model">bluroof.guest</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="actualState"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="owner_list">
+            <field name="inherit_id" ref="user_list"/>
+            <field name="name">owner_list</field>
+            <field name="model">bluroof.owner</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="isResident"/>
+                </tree>
+            </field>
+        </record>     
+ 
+        
+            	
+        <record model="ir.ui.view" id="bluroof_user_form_view">
+            <field name="name">bluroof_user_form_view</field>
+            <field name="model">bluroof.user</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="login"/>
+                            <field name="name"/>
+                            <field name="email"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="password"/>
+                                <field name="status"/>
+                                <field name="privilege"/>
+                            </group>
+                            <group>
+                                <field name="mobile"/>                               
+                                <field name="birthDate"/>
+                            </group>
+                        </group>
+                    </group>                
+                </form>          
+            </field>
+        </record>
+     
+
+        <record model="ir.ui.view"  id="guest_form_view">         
+            <field name="mode">primary</field>       
+            <field name="inherit_id" ref="bluroof_user_form_view"/>
+            <field name="name">bluroof_guest_form</field>
+            <field name="model">bluroof.guest</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='birthDate']" position="after">   
+                    <field name="actualState" String="Actual State"/>
+                </xpath>             
+            </field>
+        </record>
+        
+        <record model="ir.ui.view"  id="owner_form_view">    
+            <field name="mode">primary</field>            
+            <field name="inherit_id" ref="bluroof_user_form_view"/>
+            <field name="name">bluroof_owner_form</field>
+            <field name="model">bluroof.owner</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='birthDate']" position="after">     
+                    <field name="isResident"/>
+                </xpath>                    
+            </field>
+        </record>
+        
+     
 
     </data>
 </odoo>

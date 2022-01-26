@@ -9,10 +9,8 @@ class user (models.Model):
     birthDate = fields.Date(string="Date of birth")
     
     STATUS = [
-        ('0', 'WORKER'),
-        ('1', 'STUDENT'),
-        ('2', 'BOTH'),
-        ('3', 'UNEMPLOYED'),  
+        ('0', 'ENABLED'),  
+        ('1', 'DISABLED')
         ]
  
     PRIVILEGE = [
