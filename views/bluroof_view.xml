@@ -18,10 +18,21 @@
                             <field name="rating" String="Rating"/>
                         </group>
                     </group>
-                </form>          
+                </form>    
+                <notebook colspan="4">
+                    <page string="Comments">
+                        <field name="comments">
+                            <tree>
+                                <field name="commenter_id" String="Commenter"/>
+                                <field name="text" String="Comment"/>
+                                <field name="rating" String="Rating"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>      
             </field>
+            
         </record>
-        
         <record model="ir.ui.view" id="dwelling_list_view">
             <field name="address">dwelling.address</field>
             <field name="model">bluroof.dwelling</field>
@@ -33,6 +44,18 @@
                 </tree> 
             </field>
         </record>
-
+        <record model="ir.ui.view" id="dwelling_search_view">
+            <field name="name">dwelling.search</field>
+            <field name="model">bluroof.dwelling</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="hasWiFi" String="WiFi"/>
+                    <field name="squareMeters" String="m2"/>
+                    
+                    <filter String="WiFi" name="hasWiFi" context="{'group_by': 'hasWiFi'}"/>
+                    <filter String="m²" name="squareMeters" context="{'group_by': 'squareMeters'}"/>
+                </search>
+            </field>
+        </record>
     </data>
 </odoo>

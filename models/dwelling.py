@@ -16,3 +16,13 @@ class dwelling(models.Model):
     host_id = fields.Many2one('bluroof.owner', ondelete='cascade', String="Host", index=True)
     comments = fields.One2many('bluroof.comment', 'dwelling_id', ondelete='cascade', String="Comments", index=True)
         
+    @api.onchange('address', 'attendee_ids')
+    def _verify_null_values(self):
+        if self.address:
+            return {
+                'warning': {
+                    'title': "Empty value",
+                    'message': "The number of available seats may not be negative",
+                    },
+                }
+
