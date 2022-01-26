@@ -14,7 +14,6 @@
                    </group>
                </form>
            </field>
-           <field name="name">flatfacility.list</field>
            <field name="model">bluroof.flatfacility</field>
            <field name="arch" type="xml">
                <tree>
@@ -24,7 +23,7 @@
                </tree>
            </field>
        </record>
-       
+        
        <record model="ir.ui.view" id="bluroof_list_view">
            <field name="name">facility.list</field>
            <field name="model">bluroof.facility</field>
@@ -33,6 +32,7 @@
                    <field name="id"/>
                    <field name="facilityType"/>
                    <field name="adquisitionDate"/>
+                   <field name="flatFacilities"/>
                </tree>
            </field>
        </record>
