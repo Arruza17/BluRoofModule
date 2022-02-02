@@ -11,28 +11,28 @@
                         <group>
                             <field name="address" String="Address"/>
                             <field name="hasWiFi" String="Has WiFi"/>
-                            <field name="squareMeters" String="m²"/>
+                            <field name="squareMeters" String="m2"/>
                         </group>
                         <group>
                             <field name="constructionDate" String="Construction date"/>
                             <field name="rating" String="Rating"/>
                         </group>
                     </group>
-                </form>    
-                <notebook colspan="4">
-                    <page string="Comments">
-                        <field name="comments">
-                            <tree>
-                                <field name="commenter_id" String="Commenter"/>
-                                <field name="text" String="Comment"/>
-                                <field name="rating" String="Rating"/>
-                            </tree>
-                        </field>
-                    </page>
-                </notebook>      
+                    <notebook colspan="4">
+                        <page string="Comments">
+                            <field name="comments">
+                                <tree>
+                                    <field name="commenter_id" String="Commenter"/>
+                                    <field name="text" String="Comment"/>
+                                    <field name="rating" String="Rating"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>  
+                </form>              
             </field>
-            
         </record>
+        <!--The view of the list (The main view)-->
         <record model="ir.ui.view" id="dwelling_list_view">
             <field name="address">dwelling.address</field>
             <field name="model">bluroof.dwelling</field>
@@ -44,6 +44,7 @@
                 </tree> 
             </field>
         </record>
+        <!--The search(filter/Group by)-->
         <record model="ir.ui.view" id="dwelling_search_view">
             <field name="name">dwelling.search</field>
             <field name="model">bluroof.dwelling</field>
@@ -53,7 +54,7 @@
                     <field name="squareMeters" String="m2"/>
                     
                     <filter String="WiFi" name="hasWiFi" context="{'group_by': 'hasWiFi'}"/>
-                    <filter String="m²" name="squareMeters" context="{'group_by': 'squareMeters'}"/>
+                    <filter String="mÂ²" name="squareMeters" context="{'group_by': 'squareMeters'}"/>
                 </search>
             </field>
         </record>
