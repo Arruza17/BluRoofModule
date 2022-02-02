@@ -56,5 +56,17 @@
                 </tree> 
             </field>
         </record>
+        
+        <record model="ir.ui.view" id="neighbourhood_search_view">
+            <field name="name">neighbourhood.search</field>
+            <field name="model">bluroof.neighbourhood</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="postCode"/>                          
+                </search>
+            </field>
+        </record>
+        
     </data>
 </odoo>

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #enum = selection
 #first commit
+from asyncio.windows_events import NULL
 from odoo import api
 from odoo import fields
 from odoo import models
@@ -22,7 +23,9 @@ class service(models.Model):
     name = fields.Char()
     neighbourhood_id = fields.Many2one('bluroof.neighbourhood', ondelete='cascade', string="Neighbourhood")
         
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         self.value2 = float(self.value) / 100
+ @api.onchange('address')
+    def _check_empty_address(self):
+        if self.address==NULL:
+            return{
+               'warning': {'title': "No address",'message': "Your must imput the service address",},
+            }
