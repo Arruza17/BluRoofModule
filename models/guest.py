@@ -16,3 +16,9 @@ class guest (models.Model):
 
     actualState = fields.Selection(ACTUAL_STATE, String="Actual state")
     comments = fields.One2many('bluroof.comment', 'commenter_id', string="Comments")
+
+    @api.constrains('actualState')
+    def _check_tittleNotNull(self):
+        for record in self:
+            if (not (record.actualState and record.actualState.strip())):
+                raise ValidationError("You must input the type of actual state")

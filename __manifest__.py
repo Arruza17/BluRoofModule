@@ -26,6 +26,7 @@
         # 'security/ir.model.access.csv',
         'views/users_view.xml',
         'views/views.xml',
+        'report/bluroof_users_report.xml',
         #'views/templates.xml', 
        
 ],

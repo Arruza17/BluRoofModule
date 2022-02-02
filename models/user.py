@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from asyncio.windows_events import NULL
 from odoo import api
 from odoo import fields
 from odoo import models
@@ -25,10 +26,12 @@ class user (models.Model):
     lastPasswordChange = fields.Datetime(string="Last password change")
     phoneNumber = fields.Char(string="Telephone number")
 
-   
+    @api.onchange('phoneNumber')
+    def _check_empty_phone(self):
+        if self.phoneNumber==NULL:
+            return{
+               'warning': {'title': "No mobile",'message': "Your must imput your mobile",},
+            }
 
-    
-    
-    
-    
+
     

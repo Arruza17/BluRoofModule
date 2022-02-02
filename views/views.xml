@@ -1,24 +1,24 @@
 <odoo>
-    <data>
- 
-        <!-- actions opening views on models -->
-       
-        <record model="ir.actions.act_window" id="bluroof_show_guests">
-            <field name="name">Show guests</field>
-            <field name="res_model">bluroof.guest</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-        
-        <record model="ir.actions.act_window" id="bluroof_show_owners">
-            <field name="name">Show owners</field>
-            <field name="res_model">bluroof.owner</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-        
-      
+  <data>
 
-        
-        <!--record model="ir.actions.act_window" id="bluroof.show_rooms">
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="bluroof_show_guests">
+      <field name="name">Show guests</field>
+      <field name="res_model">bluroof.guest</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="bluroof_show_owners">
+      <field name="name">Show owners</field>
+      <field name="res_model">bluroof.owner</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+
+    <!--record model="ir.actions.act_window" id="bluroof.show_rooms">
             <field name="name">Show rooms</field>
             <field name="res_model">bluroof.room</field>
             <field name="view_mode">tree,form</field>
@@ -29,8 +29,8 @@
             <field name="res_model">bluroof.flat</field>
             <field name="view_mode">tree,form</field>
         </record-->
-        <!-- server action to the one above -->
-        <!--
+    <!-- server action to the one above -->
+    <!--
         <record model="ir.actions.server" id="bluroof.action_server">
           <field name="name">bluroof server</field>
           <field name="model_id" ref="model_bluroof_bluroof"/>
@@ -43,28 +43,26 @@
           </field>
         </record>
         -->
-        <!-- Top menu item -->
-        <menuitem name="BluRoof" id="bluroof_menu_root"/>
-        <!-- menu categories -->
-        <menuitem name="Application" id="bluroof_menu_1" parent="bluroof_menu_root"/>
-        <menuitem name="Users" id="bluroof_user_list" parent="bluroof_menu_1"/>
-        <!-- actions -->
-        <menuitem name="Guest" id="bluroof_owner_list" parent="bluroof_user_list" action="bluroof_show_guests"/>
-        <menuitem name="Owner" id="bluroof_guest_list" parent="bluroof_user_list" action="bluroof_show_owners"/>
+    <!-- Top menu item -->
+    <menuitem name="BluRoof" id="bluroof_menu_root"/>
+    <!-- menu categories -->
+    <menuitem name="Application" id="bluroof_menu_1" parent="bluroof_menu_root"/>
+    <menuitem name="Users" id="bluroof_user_list" parent="bluroof_menu_1"/>
+    <!-- actions -->
+    <menuitem name="Guest" id="bluroof_owner_list" parent="bluroof_user_list" action="bluroof_show_guests"/>
+    <menuitem name="Owner" id="bluroof_guest_list" parent="bluroof_user_list" action="bluroof_show_owners"/>
 
-        <!--menuitem name="Dwellings" id="bluroof.dwelling_list" parent="bluroof.menu_1"/>
+    <!--menuitem name="Dwellings" id="bluroof.dwelling_list" parent="bluroof.menu_1"/>
         <menuitem name="Rooms" id="bluroof.room_list" parent="bluroof.dwelling_list" action="bluroof.show_rooms"/>
         <menuitem name="Flats" id="bluroof.flat_list" parent="bluroof.dwelling_list" action="bluroof.show_flats"/>
 
         <menuitem name="Facilities" id="bluroof.menu_6_list" parent="bluroof.menu_1"/>
         <menuitem name="Neighbourhood" id="bluroof.menu_7_list" parent="bluroof.menu_1"/>
         -->
-        <!--<menuitem name="List" id="bluroof.menu_1_list" parent="bluroof.menu_1"
-                  action="bluroof.action_window"/>
+    <!--<menuitem name="List" id="bluroof.menu_1_list" parent="bluroof.menu_1" action="bluroof.action_window"/>
         -->
-        <!--
-        <menuitem name="Server to list" id="bluroof" parent="bluroof.menu_2"
-                  action="bluroof.action_server"/>
+    <!--
+        <menuitem name="Server to list" id="bluroof" parent="bluroof.menu_2" action="bluroof.action_server"/>
         -->
-    </data>
+  </data>
 </odoo>
