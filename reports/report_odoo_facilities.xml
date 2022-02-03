@@ -19,7 +19,6 @@ and open the template in the editor.
         <template id="report_facility">
             <h1>Facility Report</h1>
             <t t-call="report.html_container">
-                <t t-foreach="docs" t-as="doc">
                     <t t-call="report.external_layout">
                         <div class="page">
                             <div class="oe_structure"/>
@@ -32,6 +31,7 @@ and open the template in the editor.
                                                 <th>Type</th>
                                                 <th>Date</th>
                                             </tr>
+                                            <t t-foreach="docs" t-as="doc">
                                             <tr>
                                                 <td>
                                                     <br>
@@ -49,12 +49,12 @@ and open the template in the editor.
                                                     </br>
                                                 </td>
                                             </tr>
+                                            </t>
                                         </table>
                                     </br>
                                 </br>
                             </br>
                         </div>
-                    </t>
                 </t>
             </t>
         </template>
