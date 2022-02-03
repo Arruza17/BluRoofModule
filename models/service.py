@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 #enum = selection
 #first commit
-from asyncio.windows_events import NULL
+
+
 from odoo import api
 from odoo import fields
 from odoo import models
@@ -18,14 +19,17 @@ class service(models.Model):
         ('5', 'SHOPPING')    
         ]
 
-    serviceType = fields.Selection(SERVICES, String="Service type")
+    serviceType = fields.Selection(SERVICES, String="Service type", required='true')
     address = fields.Char()
     name = fields.Char()
     neighbourhood_id = fields.Many2one('bluroof.neighbourhood', ondelete='cascade', string="Neighbourhood")
-        
- @api.onchange('address')
-    def _check_empty_address(self):
-        if self.address==NULL:
+
+    @api.onchange('serviceType')
+    def on_change_serviceTypeNull(self):
+        if(not(self.serviceType)):
             return{
-               'warning': {'title': "No address",'message': "Your must imput the service address",},
+            'warning':{
+            'title':'null service type',
+            'message':'Service type combo box is empty. Please select a value'
             }
+        }

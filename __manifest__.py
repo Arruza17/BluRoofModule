@@ -19,9 +19,8 @@
     'version': '1.0',
 
     # any module necessary for this one to work correctly
-    
-    'depends': ['base'],
-    #'depends': ['base','report'],
+      
+    'depends': ['base','report'],
 
     # always loaded
     'data': [
@@ -30,7 +29,7 @@
         #'views/templates.xml',
         'views/service_view.xml',
         'views/neighborhood_view.xml',          
-        #'reports/service_report.xml'
+        'reports/service_report.xml',
         
  	
    ],

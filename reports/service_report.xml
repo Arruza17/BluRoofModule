@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<odoo>
+    <data>
+        <report
+        id="service_report"
+        model="bluroof.service"
+        string="Service Report"
+        report_type="qweb-pdf"
+        name="bluroof.report_service"
+        file="bluroof.report_service"
+        />
+        <template id="report_service">
+            <h1>Services Report</h1>
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <div class="oe_structure"/>
+                            <br>
+                                <br>
+                                    <br>
+                                        <table class="table table-condensed">
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Name</th>
+                                                <th>Address</th>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <br>
+                                                        <span t-field="doc.id"/>
+                                                    </br>
+                                                </td>
+                                                <td>
+                                                    <br>
+                                                        <span t-field="doc.name"/>
+                                                    </br>
+                                                </td>
+                                                <td>
+                                                    <br> 
+                                                        <span t-field="doc.address"/>
+                                                    </br>
+                                                </td>                                              
+                                            </tr>
+                                        </table>
+                                    </br>
+                                </br>
+                            </br>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
