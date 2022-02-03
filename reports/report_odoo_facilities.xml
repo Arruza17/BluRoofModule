@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<odoo>
+    <data>
+        <report
+        id="facility_report"
+        model="bluroof.facility"
+        string="Facility Report"
+        report_type="qweb-pdf"
+        name="bluroof.report_facility"
+        file="bluroof.report_facility"
+        />
+        <template id="report_facility">
+            <h1>Facility Report</h1>
+            <t t-call="report.html_container">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <div class="oe_structure"/>
+                            <br>
+                                <br>
+                                    <br>
+                                        <table class="table table-condensed">
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Type</th>
+                                                <th>Date</th>
+                                            </tr>
+                                            <t t-foreach="docs" t-as="doc">
+                                            <tr>
+                                                <td>
+                                                    <br>
+                                                        <span t-field="doc.id"/>
+                                                    </br>
+                                                </td>
+                                                <td>
+                                                    <br>
+                                                        <span t-field="doc.facilityType"/>
+                                                    </br>
+                                                </td>
+                                                <td>
+                                                    <br> 
+                                                        <span t-field="doc.adquisitionDate"/>
+                                                    </br>
+                                                </td>
+                                            </tr>
+                                            </t>
+                                        </table>
+                                    </br>
+                                </br>
+                            </br>
+                        </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

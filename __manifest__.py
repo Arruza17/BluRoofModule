@@ -19,14 +19,15 @@
     'version': '1.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'report'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',      
- 	    'views/bluroof_view.xml',
+        'views/templates.xml',
+        'views/facility_view.xml',
+        'reports/report_odoo_facilities.xml',
    ],
    
     # only loaded in demonstration mode
