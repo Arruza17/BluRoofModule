@@ -28,8 +28,10 @@
         'views/views.xml', 
         #'views/templates.xml',
         'views/service_view.xml',
-        'views/neighborhood_view.xml',          
+        'views/neighborhood_view.xml',
+        'views/dwelling_view.xml',
         'reports/service_report.xml',
+        'reports/dwelling_report.xml',
         
  	
    ],
