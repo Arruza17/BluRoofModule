@@ -26,6 +26,15 @@ class user (models.Model):
     lastPasswordChange = fields.Datetime(string="Last password change")
     phoneNumber = fields.Char(string="Telephone number")
 
+    @api.onchange('phoneNumber')
+    def _verify_valid_number(self):
+        if not len(str(self.phoneNumber)) == 9 :
+            return {
+                'warning': {
+                'title': "iNFORMATION:",
+                'message': "The phone number must contain 9 characters",
+            },
+        }
 
 
     

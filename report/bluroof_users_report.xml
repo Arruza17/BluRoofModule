@@ -1,58 +1,49 @@
 <?xml version="1.0" ?>
 <odoo>
-    <report id= "bluroof_users_report"
-        model = "bluroof.bluroof"
-        string = "Bluroof User Report" report_type="qweb-html" name="bluroof.users_report" file="bluroof.users_report" />
-
-    <template id="users_report">
+   <report
+        id="bluroof_guests_report"
+        model="bluroof.guest"
+        string="Exam Session report"
+        report_type="qweb-pdf"
+        name="bluroof.bluroof_users_report"
+        file="bluroof.bluroof_users_report"
+    />
+    <template id="bluroof_users_report">
         <t t-call="report.html_container">
-            <t t-foreach="docs" t-as="o">
+            <t t-foreach="docs" t-as="e">
                 <t t-call="report.external_layout">
                     <div class="page">
-                        <table class="table table-condensed">
-                            <tr>
-                                <th>
-                                    Full Name
-                                </th>
-                                <th>
-                                    Login
-                                </th>
-                                <th>
-                                    Email
-                                </th>
-                                <th>
-                                    Phone Number
-                                </th>
-                                <th>
-                                    Privilege
-                                </th>
-
-                            </tr>
-                            <t t-foreach="o.user" t-as="user">
-                                <tr>
-                                    <td>
-                                        <span t-field="user.name"/>
-
-                                    </td>
-                                    <td>
-                                        <span t-field="user.login"/>
-
-                                    </td>
-                                    <td>
-                                        <span t-field="user.email"/>
-
-                                    </td>
-                                    <td>
-                                        <span t-field="user.phoneNumber"/>
-
-                                    </td>
-                                    <td>
-                                          <span t-field="user.privilege"/>
-                                    </td>
-
-                                </tr>
-                            </t>
-                        </table>
+                        <div class="oe_structure"/>
+                        <br>
+                            <br>
+                                <table class="table table-condensed">
+                                    <tr> 
+                                        <th>Name</th>
+                                        <th>BirthDate</th>
+                                        <th>Actual State</th>          
+                                    </tr>
+                              
+                                    <tr>
+                                        <td>
+                                            <br>
+                                                <span t-field="e.name"/>
+                                            </br>
+                                        </td>
+                                        <td>
+                                            <br>
+                                                <span t-field="e.birthDate"/>
+                                            </br>
+                                        </td>
+                                        <td>
+                                            <br>
+                                                <span t-field="e.actualState"/>
+                                            </br>
+                                        </td>
+                               
+                                    </tr>
+                                </table>  
+                            </br>
+                           </br>
                     </div>
                 </t>
             </t>
