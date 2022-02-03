@@ -6,13 +6,12 @@ from odoo import models
 class user (models.Model):
     _inherit = 'res.users'
     _name = 'bluroof.user'
+
     birthDate = fields.Date(string="Date of birth")
     
     STATUS = [
-        ('0', 'WORKER'),
-        ('1', 'STUDENT'),
-        ('2', 'BOTH'),
-        ('3', 'UNEMPLOYED'),  
+        ('0', 'ENABLED'),  
+        ('1', 'DISABLED')
         ]
  
     PRIVILEGE = [
@@ -27,10 +26,15 @@ class user (models.Model):
     lastPasswordChange = fields.Datetime(string="Last password change")
     phoneNumber = fields.Char(string="Telephone number")
 
-   
+    @api.onchange('phoneNumber')
+    def _verify_valid_number(self):
+        if not len(str(self.phoneNumber)) == 9 :
+            return {
+                'warning': {
+                'title': "iNFORMATION:",
+                'message': "The phone number must contain 9 characters",
+            },
+        }
 
-    
-    
-    
-    
+
     

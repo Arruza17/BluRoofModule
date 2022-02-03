@@ -2,19 +2,20 @@
 
 <odoo>
   <data>
+    <<<<<<< HEAD
     <!-- explicit list view definition -->
-    <!--
+<!--
         <record model="ir.ui.view" id="bluroof.list">
-          <field name="name">bluroof list</field>
-          <field name="model">bluroof.bluroof</field>
-          <field name="arch" type="xml">
-            <tree>
-              <field name="name"/>
-              <field name="value"/>
-              <field name="value2"/>
-            </tree>
-          </field>
-        </record>
+      <field name="name">bluroof list</field>
+      <field name="model">bluroof.bluroof</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
         -->
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="bluroof_show_guests">
@@ -54,13 +55,19 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-            <!--record model="ir.ui.view" id="guest_view">
+    <!--record model="ir.ui.view" id="guest_view">
             <field name="name">view.guest</field>
             <field name="model">bluroof.user</field>
             <field name="priority" eval="16"/>
             <field name="arch" type="xml"></field>
             <field name="inherit_id" ref="id_category_list"/>
         </record-->
+
+
+
+    <!-- actions opening views on models -->
+
+
 
 
     <!--record model="ir.actions.act_window" id="bluroof.show_rooms">
@@ -97,13 +104,12 @@
     <!-- actions -->
     <menuitem name="Guest" id="bluroof_owner_list" parent="bluroof_user_list" action="bluroof_show_guests"/>
     <menuitem name="Owner" id="bluroof_guest_list" parent="bluroof_user_list" action="bluroof_show_owners"/>
-
     <menuitem name="Facility" id="bluroof_facility_list" parent="bluroof_guest_list" action="bluroof_show_facilities"/>
-
-
     <menuitem name="Admin" id="bluroof_admin_list" parent="bluroof_user_list"/>
     <menuitem name="Neighbourhoods" id="bluroof_neighborhood_list" parent="bluroof_admin_list" action="bluroof_show_neighborhoods"/>
     <menuitem name="Services" id="bluroof_service_list" parent="bluroof_admin_list" action="bluroof_show_services"/>
+
+
 
     <!--menuitem name="Dwellings" id="bluroof.dwelling_list" parent="bluroof.menu_1"/>
         <menuitem name="Rooms" id="bluroof.room_list" parent="bluroof.dwelling_list" action="bluroof.show_rooms"/>

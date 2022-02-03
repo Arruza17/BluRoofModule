@@ -32,6 +32,9 @@
         'views/dwelling_view.xml',
         'reports/service_report.xml',
         'reports/dwelling_report.xml',
+        'views/users_view.xml',
+        'reports/bluroof_report_guest_test.xml',
+
    ],
    
     # only loaded in demonstration mode

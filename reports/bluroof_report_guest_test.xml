@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<odoo>
+    <report
+        id= "project_brreport"
+        model = "bluroof.guest"
+        string = "Bluroof Guest Report"
+        report_type="qweb-pdf"
+        name="project.brreport"
+        file="project.brreport"
+    />
+    
+    <template id="brreport">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="report.external_layout"> 
+                    <div class="page">
+                        <table class="table table-condensed">  
+                            <tr>
+                                <th>
+                                    actualState
+                                </th>           
+                            </tr>                    
+                            <tr>
+                                <td>
+                                    <span t-field="o.actualState"/>                                          
+                                </td>    
+                            </tr>                                                                    
+                        </table>
+                    </div>              
+                </t>   
+            </t>   
+        </t>   
+    </template>
+</odoo>
+
+
+
