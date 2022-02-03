@@ -25,12 +25,14 @@ and open the template in the editor.
                                 <br>
                                     <br>
                                         <table class="table table-condensed">
+                                            
                                             <tr>
                                                 <th>Id</th>
                                                 <th>Name</th>
                                                 <th>Address</th>
                                                 
                                             </tr>
+                                             <t t-foreach="docs" t-as="doc">
                                             <tr>
                                                 <td>
                                                     <br>
@@ -48,6 +50,7 @@ and open the template in the editor.
                                                     </br>
                                                 </td>                                              
                                             </tr>
+                                             </t>
                                         </table>
                                     </br>
                                 </br>
