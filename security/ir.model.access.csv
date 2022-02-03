@@ -1,2 +1,10 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_bluroof_bluroof,bluroof.bluroof,model_bluroof_bluroof,,1,0,0,0
+
+access_bluroof_bluroof,bluroof_bluroof,model_bluroof_bluroof,bluroof_access,1,0,0,0
+admin_bluroof_permits,bluroof, model_bluroof_bluroof,admin_bluroof,1,1,1,1
+guest_bluroof_permits,bluroof_dwelling,model_bluroof_bluroof,,1,0,0,0
+owner_bluroof_permits,bluroof_dwelling, model_bluroof_bluroof,,1,1,1,1
+facilities_bluroof_read,ir_admin_read_manager,model_bluroof_facilities,,1,0,0,0
+facilities_bluroof_crud,bluroof, model_bluroof_facilities,,1,1,1,1
+services_bluroof_read,ir_admin_read_manager,model_bluroof_services,,1,0,0,0
+services_bluroof_crud,bluroof_bluroof, model_bluroof_services,,1,1,1,1

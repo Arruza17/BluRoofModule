@@ -2,9 +2,8 @@
 
 <odoo>
   <data>
-    <<<<<<< HEAD
     <!-- explicit list view definition -->
-<!--
+    <!--
         <record model="ir.ui.view" id="bluroof.list">
       <field name="name">bluroof list</field>
       <field name="model">bluroof.bluroof</field>
@@ -100,14 +99,16 @@
     <!-- menu categories -->
     <menuitem name="Application" id="bluroof_menu_1" parent="bluroof_menu_root"/>
     <menuitem name="Users" id="bluroof_user_list" parent="bluroof_menu_1"/>
-    <menuitem name="Dwellings" id="bluroof_dwelling_list" parent="bluroof_menu_1" action="bluroof_show_dwelling"/>
+    <menuitem name="Owners" id="bluroof_owners_dwellings" parent="bluroof_menu_1"/>
+    <menuitem name="Dwellings" id="bluroof_dwelling_list" parent="bluroof_owners_dwellings" action="bluroof_show_dwelling"/>
     <!-- actions -->
     <menuitem name="Guest" id="bluroof_owner_list" parent="bluroof_user_list" action="bluroof_show_guests"/>
     <menuitem name="Owner" id="bluroof_guest_list" parent="bluroof_user_list" action="bluroof_show_owners"/>
-    <menuitem name="Facility" id="bluroof_facility_list" parent="bluroof_guest_list" action="bluroof_show_facilities"/>
+
     <menuitem name="Admin" id="bluroof_admin_list" parent="bluroof_user_list"/>
     <menuitem name="Neighbourhoods" id="bluroof_neighborhood_list" parent="bluroof_admin_list" action="bluroof_show_neighborhoods"/>
     <menuitem name="Services" id="bluroof_service_list" parent="bluroof_admin_list" action="bluroof_show_services"/>
+    <menuitem name="Facility" id="bluroof_facility_list" parent="bluroof_admin_list" action="bluroof_show_facilities"/>
 
 
 
