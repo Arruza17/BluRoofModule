@@ -31,6 +31,7 @@ and open the template in the editor.
                                             <th>Address</th>
                                             <th>WiFi</th>
                                             <th>m2</th>
+                                            <th>Construction date</th>
                                         </tr>
                                         <t t-foreach="docs" t-as="doc">
                                             <tr>
@@ -47,6 +48,11 @@ and open the template in the editor.
                                                 <td>
                                                     <br> 
                                                         <span t-field="doc.squareMeters"/>
+                                                    </br>
+                                                </td>
+                                                 <td>
+                                                    <br> 
+                                                        <span t-field="doc.constructionDate"/>
                                                     </br>
                                                 </td>
                                             </tr>
