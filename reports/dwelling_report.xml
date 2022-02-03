@@ -9,29 +9,30 @@ and open the template in the editor.
 <odoo>
     <data>
         <report
-        id="dwelling_report"
-        model="bluroof.dwelling"
-        string="Dwelling Report"
-        report_type="qweb-pdf"
-        name="bluroof.report_dwelling"
-        file="bluroof.report_dwelling"
+            id="dwelling_report"
+            model="bluroof.dwelling"
+            string="Dwelling Report"
+            report_type="qweb-pdf"
+            name="bluroof.report_dwelling"
+            file="bluroof.report_dwelling"
         />
         <template id="report_dwelling">
             <h1>Dwelling Report</h1>
             <t t-call="report.html_container">
-                <t t-foreach="docs" t-as="doc">
-                    <t t-call="report.external_layout">
-                        <div class="page">
-                            <div class="oe_structure"/>
+               
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <br>
                             <br>
                                 <br>
-                                    <br>
-                                        <table class="table table-condensed">
-                                            <tr>
-                                                <th>Address</th>
-                                                <th>WiFi</th>
-                                                <th>m2</th>
-                                            </tr>
+                                    <table class="table table-condensed">                                            
+                                        <tr>
+                                            <th>Address</th>
+                                            <th>WiFi</th>
+                                            <th>m2</th>
+                                        </tr>
+                                        <t t-foreach="docs" t-as="doc">
                                             <tr>
                                                 <td>
                                                     <br>
@@ -49,13 +50,13 @@ and open the template in the editor.
                                                     </br>
                                                 </td>
                                             </tr>
-                                        </table>
-                                    </br>
+                                        </t>
+                                    </table>
                                 </br>
                             </br>
-                        </div>
-                    </t>
-                </t>
+                        </br>
+                    </div>
+                </t>               
             </t>
         </template>
     </data>
