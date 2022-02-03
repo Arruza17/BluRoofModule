@@ -17,14 +17,32 @@ class dwelling(models.Model):
     rating = fields.Float()
     host_id = fields.Many2one('bluroof.owner', ondelete='cascade', String="Host", index=True)
     comments = fields.One2many('bluroof.comment', 'dwelling_id', ondelete='cascade', String="Comments", index=True)
-    
-    @api.constrains('squareMeters')
+         
+    @api.onchange('squareMeters')
     def _verify_valid_squareMeters(self):
         if self.squareMeters <= 0:
-            raise exceptions.ValidationError("The squareMeters must greater than 0, try again")
+            return {
+                'warning': {
+                'title': "'squareMeters' value information",
+                'message': "The squareMeters must greater than 0",
+                },
+            }
 
     @api.constrains('constructionDate')
     def _verify_valid_constructionDate(self):
-        strConsDate = datetime.datetime.strptime(self.constructionDate, '%Y-%m-%d')
-        if strConsDate >= datetime.datetime.now():
-            raise exceptions.ValidationError('Expiration date must be after today.')
+        for dwelling in self:
+            strConsDate = datetime.datetime.strptime(self.constructionDate, '%Y-%m-%d')
+            if strConsDate >= datetime.datetime.now():
+                raise exceptions.ValidationError('Construction date must be at least before today.')
+
+    @api.constrains('rating')
+    def _verify_valid_rating0(self):
+        for dwelling in self:
+            if dwelling.rating <= 0:
+                raise exceptions.ValidationError("The rating must be greater than 0, try again")
+
+    @api.constrains('rating')
+    def _verify_valid_rating5(self):
+        for dwelling in self:
+            if dwelling.rating > 5:
+                raise exceptions.ValidationError("The rating must be lower than 5, try again")
