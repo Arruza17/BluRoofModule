@@ -27,7 +27,7 @@
         'views/views.xml',
         'views/templates.xml',
         'views/facility_view.xml',
-        'reports/report_odoo_facilities.xml'
+        'reports/report_odoo_facilities.xml',
    ],
    
     # only loaded in demonstration mode

@@ -34,7 +34,7 @@ class facility(models.Model):
             raise ValidationError('Adquisition date must be before today.')
         #on change warning instead of raise
     @api.onchange('facilityType')
-    def on_change_state(self):
+    def on_change_type_null(self):
         if(not(self.facilityType)):
             return{
             'warning' : {

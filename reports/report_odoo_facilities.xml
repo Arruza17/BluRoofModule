@@ -19,7 +19,7 @@ and open the template in the editor.
         <template id="report_facility">
             <h1>Facility Report</h1>
             <t t-call="report.html_container">
-                <t t-as="facility" t-foreach="docs">
+                <t t-foreach="docs" t-as="doc">
                     <t t-call="report.external_layout">
                         <div class="page">
                             <div class="oe_structure"/>
@@ -35,17 +35,17 @@ and open the template in the editor.
                                             <tr>
                                                 <td>
                                                     <br>
-                                                        <span t-field="bluroof.id"/>
+                                                        <span t-field="doc.id"/>
                                                     </br>
                                                 </td>
                                                 <td>
                                                     <br>
-                                                        <span t-field="bluroof.facilityType"/>
+                                                        <span t-field="doc.facilityType"/>
                                                     </br>
                                                 </td>
                                                 <td>
                                                     <br> 
-                                                        <span t-field="bluroof.adquisitionDate"/>
+                                                        <span t-field="doc.adquisitionDate"/>
                                                     </br>
                                                 </td>
                                             </tr>
