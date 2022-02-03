@@ -19,17 +19,16 @@
     'version': '1.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'report'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/users_view.xml',
         'views/views.xml',
-        'report/bluroof_users_report.xml',
-        #'views/templates.xml', 
-       
-],
+        'views/templates.xml',
+        'views/users_view.xml',
+        'reports/bluroof_report_guest_test.xml',
+   ],
    
     # only loaded in demonstration mode
     'demo': [
