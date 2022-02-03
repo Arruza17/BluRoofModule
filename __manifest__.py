@@ -20,14 +20,18 @@
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'report'],
-
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
         'views/facility_view.xml',
         'reports/report_odoo_facilities.xml',
+        #'views/templates.xml',
+        'views/service_view.xml',
+        'views/neighborhood_view.xml',
+        'views/dwelling_view.xml',
+        'reports/service_report.xml',
+        'reports/dwelling_report.xml',
    ],
    
     # only loaded in demonstration mode

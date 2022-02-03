@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 #enum = selection
 #first commit
+
+
 from odoo import api
 from odoo import fields
 from odoo import models
@@ -17,12 +19,17 @@ class service(models.Model):
         ('5', 'SHOPPING')    
         ]
 
-    serviceType = fields.Selection(SERVICES, String="Service type")
+    serviceType = fields.Selection(SERVICES, String="Service type", required='true')
     address = fields.Char()
     name = fields.Char()
     neighbourhood_id = fields.Many2one('bluroof.neighbourhood', ondelete='cascade', string="Neighbourhood")
-        
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         self.value2 = float(self.value) / 100
+
+    @api.onchange('serviceType')
+    def on_change_serviceTypeNull(self):
+        if(not(self.serviceType)):
+            return{
+            'warning':{
+            'title':'null service type',
+            'message':'Service type combo box is empty. Please select a value'
+            }
+        }

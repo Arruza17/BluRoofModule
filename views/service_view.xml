@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252"?>
+
+<odoo>
+    <data>       
+        <record model="ir.ui.view" id="service_form_view">
+            <field name="name">service.form</field>
+            <field name="model">bluroof.service</field>
+            <field name="arch" type="xml">
+                <form String="Service Form">                  
+                    <group>
+                        <field name="serviceType"/>                   
+                        <field name="address"/>
+                        <field name="name"/>
+                        <field name="neighbourhood_id"/>                                         
+                    </group>                      
+                </form>          
+            </field>
+        </record>
+                
+        <record model="ir.ui.view" id="service_list_view">                                
+            <field name="name">service.list</field>
+            <field name="model">bluroof.service</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="serviceType"/>                   
+                    <field name="address"/>
+                    <field name="name"/>
+                    <field name="neighbourhood_id"/>          
+                </tree> 
+            </field>
+        </record>      
+         
+        <record model="ir.ui.view" id="services_search_view">
+            <field name="name">service.search</field>
+            <field name="model">bluroof.service</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="serviceType"/>                   
+                    <field name="address"/>
+                    <field name="name"/>
+                    <field name="neighbourhood_id"/>          
+                </search>
+            </field>
+        </record>     
+    </data>
+</odoo>

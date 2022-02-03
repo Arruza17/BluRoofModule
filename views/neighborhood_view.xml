@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="windows-1252"?>
+
+<odoo>
+    <data>
+        
+        <record model="ir.ui.view" id="neighbourhood_form_view">
+            <field name="name">neighbourhood.form</field>
+            <field name="model">bluroof.neighbourhood</field>
+            <field name="arch" type="xml">
+                <form String="Neighbourhood Form">                  
+                    <group>
+                        <field name="name"/>
+                        <field name="postCode"/>                                                  
+                    </group>                      
+                </form>          
+            </field>
+            
+            <field name="name">service.list</field>
+            <field name="model">bluroof.service</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="serviceType"/>                   
+                    <field name="address"/>
+                    <field name="name"/>
+                    <field name="neighbourhood_id"/>
+                </tree> 
+            </field>
+                       
+            <field name="name">dwelling.list</field>
+            <field name="model">bluroof.dwelling</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="address"/>                   
+                    <field name="hasWiFi"/>
+                    <field name="squareMeters"/>
+                    <field name="neighbourhood_id"/>
+                    <field name="constructionDate"/>                   
+                    <field name="rating"/>
+                    <field name="host_id"/>
+                    <field name="comments"/>
+                </tree> 
+            </field>
+            
+        </record>
+  
+        <record model="ir.ui.view" id="neighborhood_list_view">
+                       
+            <field name="name">neighbourhood.list</field>
+            <field name="model">bluroof.neighbourhood</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="postCode"/>    
+                    <field name="dwellings"/>
+                    <field name="services"/>             
+                </tree> 
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="neighbourhood_search_view">
+            <field name="name">neighbourhood.search</field>
+            <field name="model">bluroof.neighbourhood</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="postCode"/>                          
+                </search>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<odoo>
+    <data>
+        <report
+            id="dwelling_report"
+            model="bluroof.dwelling"
+            string="Dwelling Report"
+            report_type="qweb-pdf"
+            name="bluroof.report_dwelling"
+            file="bluroof.report_dwelling"
+        />
+        <template id="report_dwelling">
+            <h1>Dwelling Report</h1>
+            <t t-call="report.html_container">
+               
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <br>
+                            <br>
+                                <br>
+                                    <table class="table table-condensed">                                            
+                                        <tr>
+                                            <th>Address</th>
+                                            <th>WiFi</th>
+                                            <th>m2</th>
+                                            <th>Construction date</th>
+                                        </tr>
+                                        <t t-foreach="docs" t-as="doc">
+                                            <tr>
+                                                <td>
+                                                    <br>
+                                                        <span t-field="doc.address"/>
+                                                    </br>
+                                                </td>
+                                                <td>
+                                                    <br>
+                                                        <span t-field="doc.hasWiFi"/>
+                                                    </br>
+                                                </td>
+                                                <td>
+                                                    <br> 
+                                                        <span t-field="doc.squareMeters"/>
+                                                    </br>
+                                                </td>
+                                                 <td>
+                                                    <br> 
+                                                        <span t-field="doc.constructionDate"/>
+                                                    </br>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                </br>
+                            </br>
+                        </br>
+                    </div>
+                </t>               
+            </t>
+        </template>
+    </data>
+</odoo>
