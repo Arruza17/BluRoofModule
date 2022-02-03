@@ -25,7 +25,19 @@ class facility(models.Model):
     @api.constrains('adquisitionDate')
     def _check_dateNotNull(self):
         for record in self:
-            if (not (record.date and record.date.strip())):
+            if (not(self.adquisitionDate)):
                 raise ValidationError("The date cant be null")
-
-    
+    @api.constrains('adquisitionDate')
+    def _verify_valid_adquisitionDate(self):
+        adqDate = datetime.datetime.strptime(self.adquisitionDate, '%Y-%m-%d')
+        if adqDate >= datetime.datetime.now():
+            raise ValidationError('Adquisition date must be before today.')
+        #on change warning instead of raise
+    @api.onchange('facilityType')
+    def on_change_state(self):
+        if(not(self.facilityType)):
+            return{
+            'warning' : {
+            'title' : 'Facility Type Null',
+            'message' : "The facility type is null"
+            } }

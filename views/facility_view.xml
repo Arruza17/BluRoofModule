@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="windows-1252"?>
-
 <odoo>
     <data>
         <record model="ir.ui.view" id="event_form_view">
