@@ -29,6 +29,13 @@
             <field name="view_mode">tree,form</field>
         </record>
         
+        <record model="ir.actions.act_window" id="bluroof_show_dwelling">
+            <field name="name">Show dwellings</field>
+            <field name="res_model">bluroof.dwelling</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        
           <record model="ir.actions.act_window" id="bluroof_show_neighborhoods">
             <field name="name">Show Neighborhoods</field>
             <field name="res_model">bluroof.neighbourhood</field>
@@ -79,7 +86,8 @@
         <menuitem name="BluRoof" id="bluroof_menu_root"/>
         <!-- menu categories -->
         <menuitem name="Application" id="bluroof_menu_1" parent="bluroof_menu_root"/>
-        <menuitem name="Users" id="bluroof_user_list" parent="bluroof_menu_1"/>s
+        <menuitem name="Users" id="bluroof_user_list" parent="bluroof_menu_1"/>
+        <menuitem name="Dwellings" id="bluroof_dwelling_list" parent="bluroof_menu_1" action="bluroof_show_dwelling"/>
         <!-- actions -->
         <menuitem name="Guest" id="bluroof_owner_list" parent="bluroof_user_list" action="bluroof_show_guests"/>
         <menuitem name="Owner" id="bluroof_guest_list" parent="bluroof_user_list" action="bluroof_show_owners"/>
@@ -90,15 +98,15 @@
         <menuitem name="Rooms" id="bluroof.room_list" parent="bluroof.dwelling_list" action="bluroof.show_rooms"/>
         <menuitem name="Flats" id="bluroof.flat_list" parent="bluroof.dwelling_list" action="bluroof.show_flats"/>
 
-            <menuitem name="Facilities" id="bluroof.menu_6_list" parent="bluroof.menu_1"/>
-            <menuitem name="Neighbourhood" id="bluroof.menu_7_list" parent="bluroof.menu_1"/>
-            -->
-            <!--<menuitem name="List" id="bluroof.menu_1_list" parent="bluroof.menu_1"
-                      action="bluroof.action_window"/>
-            -->
-            <!--
-            <menuitem name="Server to list" id="bluroof" parent="bluroof.menu_2"
-                      action="bluroof.action_server"/>
-            -->
-        </data>
-    </odoo>
+        <menuitem name="Facilities" id="bluroof.menu_6_list" parent="bluroof.menu_1"/>
+        <menuitem name="Neighbourhood" id="bluroof.menu_7_list" parent="bluroof.menu_1"/>
+        -->
+        <!--<menuitem name="List" id="bluroof.menu_1_list" parent="bluroof.menu_1"
+                  action="bluroof.action_window"/>
+        -->
+        <!--
+        <menuitem name="Server to list" id="bluroof" parent="bluroof.menu_2"
+                  action="bluroof.action_server"/>
+        -->
+    </data>
+</odoo>
