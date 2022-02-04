@@ -1,0 +1,51 @@
+<openerp>
+    <data>
+        <record model="ir.module.category"  id="access_bluroof_module">
+            <field name="name">Bluroof Acess</field>
+            <field name="description">Group that manages the app</field>
+            <field name="sequence">10</field>
+        </record>
+        
+        <record id="access_bluroof_group" model="res.groups">
+            <field name="name">Bluroof Acess Group</field>
+            <field name="comment">Group that manages access app</field>
+            <field name="category_id" ref="access_bluroof_module"/>
+        </record> 
+        
+         <record model="ir.module.category"  id="readonly_bluroof_module">
+            <field name="name">Bluroof Read Only</field>
+            <field name="description">Group that manages the app read only</field>
+            <field name="sequence">10</field>
+        </record>
+        
+        <record id="readonly_bluroof_group" model="res.groups">
+            <field name="name">Bluroof Read Only</field>
+            <field name="comment">Group that manages the app read only</field>
+            <field name="category_id" ref="readonly_bluroof_module"/>
+        </record> 
+        
+          <record model="ir.module.category"  id="fullpermits_bluroof_module">
+            <field name="name">Bluroof Full Permits</field>
+            <field name="description">Group that manages the app Full Permits</field>
+            <field name="sequence">10</field>
+        </record>
+        
+        <record id="fullpermits_bluroof_group" model="res.groups">
+            <field name="name">Bluroof Full Permits</field>
+            <field name="comment">Group that manages the app Full Permits</field>
+            <field name="category_id" ref="fullpermits_bluroof_module"/>
+        </record> 
+     
+         <record model="ir.module.category"  id="readwrite_bluroof_module">
+            <field name="name">Bluroof Read Write</field>
+            <field name="description">Group that manages the app Read Write</field>
+            <field name="sequence">10</field>
+        </record>
+        
+        <record id="readwrite_bluroof_group" model="res.groups">
+            <field name="name">Bluroof Read Write</field>
+            <field name="comment">Group that manages the app Read Write</field>
+            <field name="category_id" ref="readwrite_bluroof_module"/>
+        </record> 
+    </data>
+</openerp>
