@@ -1,7 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 
-access_bluroof_bluroof,bluroof_bluroof_access,model_bluroof_user,access_bluroof_group,1,0,0,0
-admin_bluroof_permits,bluroof,model_bluroof_user,fullpermits_bluroof_group,1,1,1,1
+access_bluroof_bluroof,bluroof_bluroof_access,model_res_users,access_bluroof_group,1,0,0,0
+admin_bluroof_permits,bluroof,model_res_users,fullpermits_bluroof_group,1,1,1,1
 
 guest_bluroof_permits,bluroof_dwelling_guest,model_bluroof_dwelling,,1,0,0,0
 owner_bluroof_permits,bluroof_dwelling_owner,model_bluroof_dwelling,readwrite_bluroof_group,1,1,0,0

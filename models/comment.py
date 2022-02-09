@@ -10,6 +10,6 @@ class comment(models.Model):
     text = fields.Text()
     rating = fields.Integer()
     commentDate = fields.Datetime()
-    commenter_id = fields.Many2one('bluroof.guest', ondelete='cascade', String="Commenter")
+    commenter_id = fields.Many2one('res.users', ondelete='cascade', String="Commenter")
     dwelling_id = fields.Many2one('bluroof.dwelling', ondelete='cascade', String="Dwelling")
         

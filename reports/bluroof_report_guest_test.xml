@@ -2,32 +2,50 @@
 <odoo>
     <report
         id= "project_brreport"
-        model = "bluroof.guest"
+        model = "res.users"
         string = "Bluroof Guest Report"
         report_type="qweb-pdf"
-        name="project.brreport"
-        file="project.brreport"
+        name="bluroof.user_report"
+        file="bluroof.user_report"
     />
     
-    <template id="brreport">
+    <template id="user_report">
         <t t-call="report.html_container">
-            <t t-foreach="docs" t-as="o">
-                <t t-call="report.external_layout"> 
-                    <div class="page">
-                        <table class="table table-condensed">  
-                            <tr>
-                                <th>
-                                    actualState
-                                </th>           
-                            </tr>                    
+           
+            <t t-call="report.external_layout"> 
+                <div class="page">
+                    <table class="table table-condensed">  
+                        <br></br>   
+                        <br></br>   
+                        <br></br>   
+                        <br></br>   
+                        <br></br>   
+                        <tr>
+                            <th>
+                                Full Name
+                            </th>     
+                            <th>
+                                Email
+                            </th>  
+                            <th>
+                                Phone #
+                            </th>           
+                        </tr>  
+                        <t t-foreach="docs" t-as="o">                  
                             <tr>
                                 <td>
-                                    <span t-field="o.actualState"/>                                          
+                                    <span t-field="o.name"/>                                          
                                 </td>    
-                            </tr>                                                                    
-                        </table>
-                    </div>              
-                </t>   
+                                <td>
+                                    <span t-field="o.email"/>                                          
+                                </td>  
+                                <td>
+                                    <span t-field="o.phoneNumber"/>                                         
+                                </td>  
+                            </tr>     
+                        </t>                                                                 
+                    </table>
+                </div>              
             </t>   
         </t>   
     </template>

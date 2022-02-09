@@ -19,13 +19,13 @@
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="bluroof_show_guests">
       <field name="name">Show guests</field>
-      <field name="res_model">bluroof.guest</field>
+      <field name="res_model">res.users</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="bluroof_show_owners">
       <field name="name">Show owners</field>
-      <field name="res_model">bluroof.owner</field>
+      <field name="res_model">res.users</field>
       <field name="view_mode">tree,form</field>
     </record>
 

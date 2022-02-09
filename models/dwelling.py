@@ -15,7 +15,7 @@ class dwelling(models.Model):
     neighbourhood_id = fields.Many2one('bluroof.neighbourhood', ondelete='cascade', String="Neighbourhood", index=True)
     constructionDate = fields.Date()  
     rating = fields.Float()
-    host_id = fields.Many2one('bluroof.owner', ondelete='cascade', String="Host", index=True)
+    host_id = fields.Many2one('res.users', ondelete='cascade', String="Host", index=True)
     comments = fields.One2many('bluroof.comment', 'dwelling_id', ondelete='cascade', String="Comments", index=True)
          
     @api.onchange('squareMeters')

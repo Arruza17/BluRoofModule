@@ -2,10 +2,10 @@
 from odoo import api
 from odoo import fields
 from odoo import models
+from odoo import exceptions
 
 class user (models.Model):
     _inherit = 'res.users'
-    _name = 'bluroof.user'
 
     birthDate = fields.Date(string="Date of birth")
     
@@ -20,11 +20,31 @@ class user (models.Model):
         ('2', 'GUEST'),
         ]
 
-
-    status = fields.Selection(STATUS, string="Status")
-    privilege = fields. Selection(PRIVILEGE, string="Privilege")
+    ACTUAL_STATE = [
+        ('0', 'WORKER'),
+        ('1', 'STUDENT'),
+        ('2', 'BOTH'),
+        ('3', 'UNEMPLOYED')
+    ]
+    
+    userStatus = fields.Selection(STATUS, string="Status")
+    userPrivilege = fields. Selection(PRIVILEGE, string="Privilege")
     lastPasswordChange = fields.Datetime(string="Last password change")
     phoneNumber = fields.Char(string="Telephone number")
+
+    #Guest
+    actualState = fields.Selection(ACTUAL_STATE, String="Actual state")
+    comments = fields.One2many('bluroof.comment', 'commenter_id', string="Comments")
+    
+    #Host
+    isResident = fields.Boolean(string="Is resident")
+    dwellings = fields.One2many('bluroof.dwelling', 'host_id', string="Dwellings")
+    
+    @api.constrains('actualState')
+    def _check_actual_state_not_null(self):
+            if (not (self.actualState and self.actualState.strip())):
+                raise exceptions.ValidationError("You must input the type of actual state")
+
 
     @api.onchange('phoneNumber')
     def _verify_valid_number(self):
